@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "General Question",
+    "complexity": "Low",
+    "question": "Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu bao nhiêu tín chỉ để tốt nghiệp?",
+    "expected_behavior": "Agent trả lời trực tiếp dựa trên kiến thức chung mà không cần gọi Tool."
+  },
+  {
+    "id": "TC02",
+    "type": "Tool Call - Academic Query",
+    "complexity": "Medium",
+    "question": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "expected_behavior": "Agent gọi tool academic_query với student_id là SV2026001 và trả về thông tin GPA, lớp."
+  },
+  {
+    "id": "TC03",
+    "type": "Tool Call - Schedule Appointment",
+    "complexity": "Medium",
+    "question": "Đặt lịch hẹn tư vấn học vụ cho sinh viên SV2026001 vào lúc 14:00 ngày 15/09/2026 với cố vấn PGS.TS Nguyễn Văn A.",
+    "expected_behavior": "Agent gọi tool schedule_appointment với các tham số tương ứng và báo thành công."
+  },
+  {
+    "id": "TC04",
+    "type": "Multi-step Reasoning",
+    "complexity": "High",
+    "question": "Hãy tra cứu xem sinh viên SV2026002 có GPA là bao nhiêu, sau đó đặt lịch hẹn tư vấn cho bạn ấy vào 09:00 sáng mai.",
+    "expected_behavior": "Agent thực hiện chuỗi ReAct: gọi academic_query trước, sau đó gọi schedule_appointment."
+  },
+  {
+    "id": "TC05",
+    "type": "Edge Case - Not Found",
+    "complexity": "Low",
+    "question": "Tra cứu thông tin học vụ của sinh viên mã SV9999999.",
+    "expected_behavior": "Tool trả về trạng thái NOT_FOUND và Agent thông báo không tìm thấy dữ liệu."
+  }
+]
